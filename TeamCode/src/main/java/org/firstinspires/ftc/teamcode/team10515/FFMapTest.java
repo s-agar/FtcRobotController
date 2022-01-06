@@ -21,7 +21,7 @@ public class FFMapTest {
     static private final String FRONTLEFT      = "FL";
     static private final String REARRIGHT      = "RR";
     static private final String REARLEFT       = "RL";
-    static private final String CAROUSELM      = "CM";
+//    static private final String CAROUSELM      = "CM";
 
     static final String IMU_SENSOR = "imu";
 
@@ -40,19 +40,19 @@ public class FFMapTest {
         FR      = hwMap.dcMotor.get(FRONTRIGHT);
         RR      = hwMap.dcMotor.get(REARRIGHT);
         RL      = hwMap.dcMotor.get(REARLEFT);
-        CM      = hwMap.dcMotor.get(CAROUSELM);
+//        CM      = hwMap.dcMotor.get(CAROUSELM);
 
         FL.setDirection(DcMotor.Direction.FORWARD);
         FR.setDirection(DcMotor.Direction.FORWARD);
         RR.setDirection(DcMotor.Direction.FORWARD);
         RL.setDirection(DcMotor.Direction.FORWARD);
-        CM.setDirection(DcMotor.Direction.FORWARD);
+//        CM.setDirection(DcMotor.Direction.FORWARD);
 
         FL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         FR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        CM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+//        CM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         FL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         FR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -63,7 +63,7 @@ public class FFMapTest {
         FR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         RR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         RL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        CM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        CM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;

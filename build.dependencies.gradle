@@ -6,6 +6,7 @@ repositories {
         dirs rootProject.file('libs')
     }
     maven { url 'https://jitpack.io' }
+    maven { url = 'https://maven.brott.dev/'}
 }
 
 dependencies {
@@ -22,5 +23,6 @@ dependencies {
     implementation 'org.firstinspires.ftc:gameAssets-FreightFrenzy:1.0.0'
     implementation 'com.github.OutoftheBoxFTC:EasyTensorflowAPI:v1.1.0-Alpha'
     implementation 'org.openftc:rev-extensions-2:1.2'
+    implementation 'com.acmerobotics.dashboard:dashboard:0.4.3'
 }
 

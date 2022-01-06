@@ -29,7 +29,7 @@ public class CarouselTest extends OpMode {
         else if(gamepad1.y){
             power = 1;
         }
-        robot.CM.setPower(power);
+        robot.FR.setPower(power);
         telemetry.addLine("Power: " + power);
     }
 }
