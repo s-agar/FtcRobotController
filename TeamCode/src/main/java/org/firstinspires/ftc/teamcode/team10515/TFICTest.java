@@ -18,6 +18,8 @@ import org.openftc.easyopencv.OpenCvPipeline;
 import org.openftc.easyopencv.OpenCvWebcam;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @TeleOp(name="TFIC Test", group="Test")
 public class TFICTest extends LinearOpMode {
@@ -68,12 +70,18 @@ public class TFICTest extends LinearOpMode {
             telemetry.update();
 
             if (gamepad1.a){
+                telemetry.addLine("A Pressed");
                 webcam.stopStreaming();
             }
             else if (gamepad1.y){
                 try {
-                    TensorImageClassifier tfic = new TFICBuilder(robot.hwMap, "model.tflite", "left", "center", "right").build();
-                    tfic.recognize(pipeline.getMat());
+                    telemetry.addLine("Y Pressed");
+                    TensorImageClassifier tfic = new TFICBuilder(robot.hwMap, "model.lite", "left", "center", "right").build();
+                    List<TensorImageClassifier.Recognition> recognitions = tfic.recognize(pipeline.getMat());
+                    telemetry.addLine(recognitions.get(1).getTitle());
+                    while(!gamepad1.b){
+                        telemetry.addLine("Press B to continue");
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
